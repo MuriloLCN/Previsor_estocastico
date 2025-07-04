@@ -1,7 +1,7 @@
 import numpy as np
-import matplotlib.pyplot as plt
-from collections import Counter
-import seaborn as sns
+# import matplotlib.pyplot as plt
+# from collections import Counter
+# import seaborn as sns
 
 indices = {
     '+': 0,
@@ -41,31 +41,14 @@ if __name__ == "__main__":
     print("Carregando matriz...")
     dados = np.load("m_const_letras_unico.npz")
     matriz = dados['arr_0']
-
+    
     print("Gerando palavras...")
-    tamanhos = []
-    palavras = []
+    # tamanhos = []
+    # palavras = []
 
-    for _ in range(9999):
+    for _ in range(int(input("Insira quantas palavras a serem geradas: "))):
         palavra = gerar_palavra(matriz)
+        print(palavra)
         # print(palavra)
-        palavras.append(palavra)
-        tamanhos.append(len(palavra))
-
-    print("Análise estatística:")
-    print(f"Total de palavras geradas: {len(palavras)}")
-    print(f"Média de tamanho: {np.mean(tamanhos):.2f}")
-    print(f"Mediana de tamanho: {np.median(tamanhos):.2f}")
-    print(f"Moda de tamanho: {Counter(tamanhos).most_common(1)[0]}")
-    print(f"Tamanho máximo: {max(tamanhos)}")
-    print(f"Tamanho mínimo: {min(tamanhos)}")
-
-    plt.figure(figsize=(10, 6))
-    sns.histplot(tamanhos, bins=range(1, max(tamanhos)+2), kde=False, color='royalblue')
-    plt.title("Distribuição dos Tamanhos das Palavras Geradas - Matriz cumulativa (n = 9999)")
-    plt.xlabel("Tamanho da Palavra")
-    plt.ylabel("Frequência")
-    plt.grid(True, linestyle='--', alpha=0.4)
-    plt.tight_layout()
-    plt.savefig("histograma_tamanhos.png")
-    plt.show()
+        # palavras.append(palavra)
+        # tamanhos.append(len(palavra))

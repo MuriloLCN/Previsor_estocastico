@@ -80,7 +80,7 @@ if __name__ == "__main__":
     # tamanhos = []
     # palavras = []
 
-    for _ in range(150):
+    for _ in range(int(input("Insira quantas palavras a serem geradas: "))):
         palavra = gerar_palavra(matriz)
         print(palavra)
         # palavras.append(palavra)

@@ -11,7 +11,8 @@ def carregar_vocabulario():
     return vocab, vocab_inv
 
 vocab, vocab_inv = carregar_vocabulario()
-print(vocab)
+arq = np.load("m_frases.npz")
+matrizes = arq['arr_0']
 
 def escolher_prox_palavra(matrizes, indice_palavra_atual, indice_matriz, vocab_inv):
     linha = matrizes[indice_palavra_atual, :, indice_matriz]
@@ -23,13 +24,13 @@ def escolher_prox_palavra(matrizes, indice_palavra_atual, indice_matriz, vocab_i
     return np.random.choice(len(probs), p=probs)
 
 def gerar_frase():
-    global vocab, vocab_inv
+    global vocab, vocab_inv, arq, matrizes
     # print(vocab_inv)
     idx_SOP = vocab["<SOP>"]
     idx_EOP = vocab["<EOP>"]
 
-    arq = np.load("m_frases.npz")
-    matrizes = arq['arr_0']
+    # arq = np.load("m_frases.npz")
+    # matrizes = arq['arr_0']
 
     frase = []
     idx_atual = idx_SOP
@@ -47,5 +48,5 @@ def gerar_frase():
     return " ".join(frase)
 
 if __name__ == "__main__":
-    for _ in range(50):
+    for _ in range(int(input("Insira quantas frases a serem geradas: "))):
         print("Frase gerada:", gerar_frase())

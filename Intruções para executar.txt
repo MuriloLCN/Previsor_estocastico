@@ -1,0 +1,19 @@
+Instruções para a execução:
+
+Implementação 1: Gerador palavras com 22 matrizes
+
+* Recalcular a matriz: 'python calc_matr_letras.py' (opcional, matriz já está calculada em m_const_letras.npz)
+
+* Gerar palavras: 'python gerador_palavras_22.py'
+
+Implementação 1.1: Gerador palavras com apenas 1 matriz
+
+* Recalcular a matriz: 'python calc_matr_letras_unico.py' (opcional, matriz já está calculada em m_const_letras_unico.npz)
+
+* Gerar palavras: 'python gerador_palavras_unico.py'
+
+Implementação 2: Gerador frases
+
+* Recalcular a matriz: 'python calc_matr_palavras.py' (opcional, matriz já está calculada em m_frases.npz)
+
+* Gerar palavras: 'python gerador_frases.py'
